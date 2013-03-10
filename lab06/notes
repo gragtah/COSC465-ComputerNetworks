@@ -1,0 +1,21 @@
+cat> x.txt -> dump contents of file to std output
+
+CLIENT SIDE ************
+netcat -> dumps to some network ---
+
+netcat cs.colgate.edu 80 < input.txt    will dump contents from std input to that connection
+
+create tcp connection to server at cs.colgate.edu port 80
+
+copy stdin to server connection and data on server connection to stdout until connection closes/eof on stdin
+
+
+SERVER SIDE************
+
+netcat -s 12000 
+
+when connection is received, copy data from stdin to network 
+copy data from network to stdout until netconnection goes away/eof stdin
+
+
+start with server side, and do refactoring for client side.

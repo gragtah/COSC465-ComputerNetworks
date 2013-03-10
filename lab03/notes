@@ -1,0 +1,23 @@
+
+./bitblastsend -i "149.43.80.13" -p 50 -r 10000 -n 11 -t 1024
+
+./bitblastrecv -p 1024 -s "149.43.80.13"
+
+
+i : recvr ip
+t: port
+r: target rate
+n: num of packets
+p: packet size
+
+ ./bitblastsend -i "149.43.80.13" -p 1470 -r 100000000 -n 20 -t 1024
+ ./bitblastsend -i "149.43.80.13" -p 1470 -r 100000000 -n 50 -t 1024
+ ./bitblastsend -i "149.43.80.13" -p 50 -r 10000 -n 80 -t 1024
+
+ 0.46
+ /5     /10 /20
+ 
+ Everything's working good (try moRE?)
+
+ Except this goes to 6% why??? do scaling/ratio of 'factor'?
+ ./bitblastsend -i "149.43.80.13" -p 1470 -r 100000000 -n 13 -t 1024

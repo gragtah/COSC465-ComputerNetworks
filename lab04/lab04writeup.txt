@@ -1,0 +1,452 @@
+Lab 04 writeup
+AJ Ganik                                                               
+Gaurav Ragtah
+Samantha Varela
+                                                                     
+                                             
+I. ebb.colgate.edu (149.43.80.20)-> node2.planetlab.albany.edu (169.226.40.4)
+
+
+        1) 20 packets transmitted, 20 received , 0% packet loss, time 19020ms 
+              rtt min/avg/max/mdev = 42.965/51.666/58.474/4.796 ms
+
+        2) 
+              The iperf average for albany to ebb : 1.645 Mbits/sec
+              The iperf average for ebb to albany : 2.795 Mbits/sec
+              albany: Network bandwidth: Upload 4.3 Mbit/sec, Download 6.6 Mbit/sec
+              ebb: Network bandwidth (?): Upload 5.7 Mbit/sec, Download 5.6 Mbit/sec
+                                                         
+        3) 
+              ebb.colgate.edu -> node2.planetlab.albany.edu: 18 hops
+              node2.planetlab.albany.edu -> ebb.colgate.edu: 21 hops
+
+        4) 
+
+              ebb.colgate.edu -> node2.planetlab.albany.edu
+
+              AS      | IP               | BGP Prefix          | CC | Registry | Allocated  | AS Name
+              1289    | 149.43.80.2      | 149.43.0.0/16       | US | arin     | 1997-07-08 | COLGATE-UNIVERSITY - Colgate University
+              NA      | 172.16.2.10      | NA                  |    |          |            | NA
+              11351   | 72.43.89.1       | 72.43.88.0/22       | US | arin     | 2005-03-21 | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+              11351   | 24.58.149.20     | 24.58.0.0/15        | US | arin     | 2001-11-02 | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+              11351   | 24.58.149.2      | 24.58.0.0/15        | US | arin     | 2001-11-02 | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+              11351   | 24.58.149.254    | 24.58.0.0/15        | US | arin     | 2001-11-02 | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+              11351   | 24.24.21.215     | 24.24.0.0/18        | US | arin     | 2000-06-09 | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+              7843    | 66.109.6.74      | 66.109.0.0/20       | US | arin     | 2001-05-23 | TWCABLE-BACKBONE - Road Runner HoldCo LLC
+              7843    | 107.14.19.147    | 107.14.16.0/20      | US | arin     | 2010-09-23 | TWCABLE-BACKBONE - Road Runner HoldCo LLC
+              174     | 154.54.13.81     | 154.48.0.0/12       | US | arin     | 1992-02-05 | COGENT Cogent/PSI
+              174     | 154.54.46.249    | 154.48.0.0/12       | US | arin     | 1992-02-05 | COGENT Cogent/PSI
+              174     | 154.54.24.145    | 154.48.0.0/12       | US | arin     | 1992-02-05 | COGENT Cogent/PSI
+              174     | 154.54.27.50     | 154.48.0.0/12       | US | arin     | 1992-02-05 | COGENT Cogent/PSI
+              174     | 154.54.43.1      | 154.48.0.0/12       | US | arin     | 1992-02-05 | COGENT Cogent/PSI
+              174     | 38.101.32.18     | 38.0.0.0/8          | US | arin     | 1991-04-16 | COGENT Cogent/PSI
+              46273   | 76.78.64.50      | 76.78.64.0/21       | US | arin     | 2007-04-09 | APOGEE-ALBANY - Apogee Telecom Inc.
+              22990   | 169.226.13.42    | 169.226.0.0/16      | US | arin     | 1995-07-13 | ALBANYEDU - The University at Albany
+              22990   | 169.226.40.4     | 169.226.0.0/16      | US | arin     | 1995-07-13 | ALBANYEDU - The University at Albany
+
+              There are 6 ASes in this path, excluding the IP for which data could not be gathered by whois.
+
+
+
+              node2.planetlab.albany.edu -> ebb.colgate.edu
+
+              AS      | IP               | BGP Prefix          | CC | Registry | Allocated  | AS Name
+              22990   | 169.226.40.1     | 169.226.0.0/16      | US | arin     | 1995-07-13 | ALBANYEDU - The University at Albany
+              22990   | 169.226.13.41    | 169.226.0.0/16      | US | arin     | 1995-07-13 | ALBANYEDU - The University at Albany
+              46273   | 76.78.64.49      | 76.78.64.0/21       | US | arin     | 2007-04-09 | APOGEE-ALBANY - Apogee Telecom Inc.
+              174     | 38.101.32.17     | 38.0.0.0/8          | US | arin     | 1991-04-16 | COGENT Cogent/PSI
+              174     | 154.54.42.146    | 154.48.0.0/12       | US | arin     | 1992-02-05 | COGENT Cogent/PSI
+              174     | 154.54.40.34     | 154.48.0.0/12       | US | arin     | 1992-02-05 | COGENT Cogent/PSI
+              174     | 154.54.41.1      | 154.48.0.0/12       | US | arin     | 1992-02-05 | COGENT Cogent/PSI
+              174     | 154.54.26.130    | 154.48.0.0/12       | US | arin     | 1992-02-05 | COGENT Cogent/PSI
+              174     | 154.54.31.94     | 154.48.0.0/12       | US | arin     | 1992-02-05 | COGENT Cogent/PSI
+              174     | 154.54.10.194    | 154.48.0.0/12       | US | arin     | 1992-02-05 | COGENT Cogent/PSI
+              7843    | 107.14.19.134    | 107.14.16.0/20      | US | arin     | 2010-09-23 | TWCABLE-BACKBONE - Road Runner HoldCo LLC
+              7843    | 66.109.9.31      | 66.109.0.0/20       | US | arin     | 2001-05-23 | TWCABLE-BACKBONE - Road Runner HoldCo LLC
+              7843    | 107.14.17.173    | 107.14.16.0/20      | US | arin     | 2010-09-23 | TWCABLE-BACKBONE - Road Runner HoldCo LLC
+              7843    | 66.109.6.75      | 66.109.0.0/20       | US | arin     | 2001-05-23 | TWCABLE-BACKBONE - Road Runner HoldCo LLC
+              11351   | 24.24.21.214     | 24.24.0.0/18        | US | arin     | 2000-06-09 | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+              11351   | 24.58.149.255    | 24.58.0.0/15        | US | arin     | 2001-11-02 | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+              11351   | 24.58.149.3      | 24.58.0.0/15        | US | arin     | 2001-11-02 | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+              11351   | 24.58.149.21     | 24.58.0.0/15        | US | arin     | 2001-11-02 | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+              11351   | 72.43.89.2       | 72.43.88.0/22       | US | arin     | 2005-03-21 | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+              * * * 
+              1289    | 149.43.80.20     | 149.43.0.0/16       | US | arin     | 1997-07-08 | COLGATE-UNIVERSITY - Colgate University
+
+              So there are 6 ASes in this path, not counting #20, the IP for which round trip could not be completed, either due to firewalling or due to target being unavailable.
+
+
+        5) packet loss
+
+              ebb.colgate.edu -> node2.planetlab.albany.edu : 0.0074, 0.0057
+              Avg packet loss rate: 0.0066
+
+              node2.planetlab.albany.edu -> ebb.colgate.edu : 0.00017, 0.001   
+              Avg packet loss rate: 0.00059 
+
+              This is interesting because it means that a lot more packets are lost in the direction of colgate to albany!
+
+
+        6) 
+              ebb.colgate.edu -> node2.planetlab.albany.edu
+              Tput = 1500 * 0.87 / 0.51666 *sqrt(0.0066) = 31090.93
+
+              node2.planetlab.albany.edu -> ebb.colgate.edu
+              Tput = 1500 * 0.87 / 0.51666 *sqrt(0.00059) = 103987.148 
+
+
+        7)
+              ebb.colgate.edu -> node2.planetlab.albany.edu
+                              Buffering Elasticity:
+                              @ 5.0 Mbits/sec:
+                              rtt min/avg/max/mdev = 44.175/50.756/59.748/4.736 ms
+
+              node2.planetlab.albany.edu -> ebb.colgate.edu
+                              Buffering Elasticity:
+                              @ 5.0 Mbits/sec:
+                              rtt min/avg/max/mdev = 45.354/52.354/56.856/4.938 ms
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+II. ebb.colgate.edu (149.43.80.20) <--> planetlab1.upm.ro (193.226.19.30)
+
+	1)
+		ebb.colgate.edu -> planetlab1.upm.ro 
+		50 packets transmitted, 50 received, 0% packet loss, time 49013ms
+		rtt min/avg/max/mdev = 153.837/153.901/154.027/0.472 ms
+
+
+		planetlab1.upm.ro -> ebb.colgate.edu
+		50 packets transmitted, 50 received, 0% packet loss, time 49599ms
+		rtt min/avg/max/mdev = 128.587/128.726/129.006/0.348 ms
+
+
+
+	2)  ebb.colgate.edu
+		Iperf: Average: 4.13 Mbits/sec
+		Netalyzr: Upload 5.0 Mbit/sec, Download 5.1 Mbit/sec
+
+		planetlab1.upm.ro 
+		Upload 940 Kbit/sec, Download 14 Mbit/sec 
+		
+		A very marked difference for upload and download here. 	planetlab1.upm.ro is the clear bottleneck for upload. For downloading, ebb is the bottleneck.
+
+	3) 
+		ebb.colgate.edu -> planetlab1.upm.ro
+		24 hops
+
+		planetlab1.upm.ro -> ebb.colgate.edu
+		27 hops
+
+	4)	ebb.colgate.edu -> planetlab1.upm.ro: 6 ASes
+		
+		AS 1: Colgate
+		01| 149.43.80.2      | COLGATE-UNIVERSITY - Colgate University
+		AS 2: Unknown
+		02| 172.16.2.10      | NA
+		AS 3: Road Runner NY
+		03| 72.43.89.1       | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		04| 24.58.149.20     | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		05| 24.58.149.2      | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		06| 24.58.149.254    | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		07| 24.58.149.215    | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		AS 4: more Road Runner (now a backbone cable)
+		08| 66.109.6.74      | TWCABLE-BACKBONE - Road Runner HoldCo LLC
+		09| 66.109.6.157     | TWCABLE-BACKBONE - Road Runner HoldCo LLC
+		AS 5: Cogent/PSI 
+		10| 154.54.13.81     | COGENT Cogent/PSI
+		11| 154.54.3.97      | COGENT Cogent/PSI
+		12| 154.54.44.14     | COGENT Cogent/PSI
+		13| 154.54.31.170    | COGENT Cogent/PSI
+		14| 154.54.37.77     | COGENT Cogent/PSI
+		15| 130.117.2.201    | COGENT Cogent/PSI
+		16| 130.117.50.234   | COGENT Cogent/PSI
+		17| 154.54.38.250    | COGENT Cogent/PSI
+		18| 154.54.60.250    | COGENT Cogent/PSI
+		19| 149.6.50.10      | COGENT Cogent/PSI
+		AS 6
+		20| 89.37.13.6       | ROEDUNET Agentia pentru Administrarea Retelei de Informatica pentru Educatie si...
+		21| 89.37.13.34      | ROEDUNET Agentia pentru Administrarea Retelei de Informatica pentru Educatie si...
+		22| 89.37.2.2        | ROEDUNET Agentia pentru Administrarea Retelei de Informatica pentru Educatie si...
+		23| 217.73.170.254   | ROEDUNET Agentia pentru Administrarea Retelei de Informatica pentru Educatie si...
+		24| 193.226.19.30    | ROEDUNET Agentia pentru Administrarea Retelei de Informatica pentru Educatie si...
+		
+                6 ASes in this path. Routers 20-23 are most likely oceanic cables acc. to GeoIP lookup, and there onwards we have Romanian routers.
+
+		planetlab1.upm.ro -> ebb.colgate.edu: 6 ASes
+		AS 1
+		01| 193.226.19.30    | ROEDUNET Agentia pentru Administrarea Retelei de Informatica pentru Educatie si...
+		02| 217.73.170.254   | ROEDUNET Agentia pentru Administrarea Retelei de Informatica pentru Educatie si...
+		03| 89.37.2.2        | ROEDUNET Agentia pentru Administrarea Retelei de Informatica pentru Educatie si...
+	 	04| 89.37.13.33      | ROEDUNET Agentia pentru Administrarea Retelei de Informatica pentru Educatie si...
+		05| 89.37.13.5       | ROEDUNET Agentia pentru Administrarea Retelei de Informatica pentru Educatie si...
+		AS 2: Cogent/PSI
+		06| 149.6.50.9       | COGENT Cogent/PSI
+		07| 154.54.60.249    | COGENT Cogent/PSI
+		08| 130.117.50.122   | COGENT Cogent/PSI
+		09| 130.117.50.233   | COGENT Cogent/PSI
+		10| 130.117.2.41     | COGENT Cogent/PSI 
+		11| 154.54.37.70     | COGENT Cogent/PSI
+		12| 154.54.31.181    | COGENT Cogent/PSI  
+		13| 154.54.44.13     | COGENT Cogent/PSI
+		14| 154.54.26.177    | COGENT Cogent/PSI
+		15| 154.54.1.206     | COGENT Cogent/PSI
+		16| 154.54.13.158    | COGENT Cogent/PSI
+		AS 3: Road Runner Backbone
+		17| 107.14.19.134    | TWCABLE-BACKBONE - Road Runner HoldCo LLC
+		18| 66.109.6.29      | TWCABLE-BACKBONE - Road Runner HoldCo LLC
+		19| 66.109.6.27      | TWCABLE-BACKBONE - Road Runner HoldCo LLC
+		20| 107.14.19.27     | TWCABLE-BACKBONE - Road Runner HoldCo LLC
+		AS 4: Road Runner NYS
+		21| 24.24.21.214     | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		22| 24.58.149.255    | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		23| 24.58.149.3      | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		24| 24.58.149.21     | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		25| 72.43.89.2       | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		AS 5: Hidden
+		26  * * *
+		AS 6: Colgate
+		27| 149.43.80.20     | COLGATE-UNIVERSITY - Colgate University
+		
+	
+
+	5)
+		ebb.colgate.edu -> planetlab1.upm.ro
+		@1/2 BNR
+			Packets received: 97
+			Packets (apparently) sent: 99
+			Packets lost: 2
+			Duplicate packets: 0
+			Send rate (bits/sec): 6927.61347341
+			Receive rate (bits/sec): 6927.63748121
+			Average send spacing (milliseconds): 928.795083333
+			Average receive spacing (milliseconds): 928.791864583
+			Loss Rate: 3%
+		@1/4 BNR
+			Packets received: 98
+			Packets (apparently) sent: 99
+			Packets lost: 1
+			Duplicate packets: 0
+			Send rate (bits/sec): 3499.60696547
+			Receive rate (bits/sec): 3499.60881022
+			Average send spacing (milliseconds): 1838.39201031
+			Average receive spacing (milliseconds): 1838.39104124
+			Loss Rate: 2%
+
+		planetlab1.upm.ro -> ebb.colgate.edu
+		@1/2 BNR
+			Packets received: 100
+			Packets (apparently) sent: 100
+			Packets lost: 0
+			Duplicate packets: 0
+			Send rate (bits/sec): 2575.76203797
+			Receive rate (bits/sec): 2575.76472596
+			Average send spacing (milliseconds): 2497.25057576
+			Average receive spacing (milliseconds): 2497.2479697
+			Loss Rate: 0%
+
+		@1/4 BNR
+			Packets received: 100
+			Packets (apparently) sent: 100
+			Packets lost: 0
+			Duplicate packets: 0
+			Send rate (bits/sec): 1287.88822607
+			Receive rate (bits/sec): 1287.8884631
+			Average send spacing (milliseconds): 4994.47320202
+			Average receive spacing (milliseconds): 4994.47228283
+			Loss Rate: 0%
+
+	6)
+		ebb.colgate.edu -> planetlab1.upm.ro:
+		Tput = (1500 bytes * 0.87)/(153.901ms * sqrt(0.003)) = 1.20947939 Mb/s
+
+		planetlab1.upm.ro -> ebb.colgate.edu:
+		Tput = (1500 bytes * 0.87)/(128.726ms * sqrt(0.0001)) = 7.9201657 Mb/s
+
+
+	7)
+		ebb.colgate.edu -> planetlab1.upm.ro
+		@ 11 Mb/s, 750b packetsize
+			100 packets transmitted, 99 received, 1% packet loss, time 99116ms
+			rtt min/avg/max/mdev = 153.822/154.277/166.576/1.723 ms
+
+
+		planetlab1.upm.ro -> ebb.colgate.edu 
+		@ 4 Mb/s, 750b packetsize
+			100 packets transmitted, 100 received, 0% packet loss, time 99757ms
+			rtt min/avg/max/mdev = 153.846/154.741/167.180/2.814 ms
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+III. ebb.colgate.edu (149.43.80.20) -> planetlab1.nakao-lab.org (202.237.248.221) Japan
+
+	1) 
+		ebb.colgate.edu -> planetlab1.nakao-lab.org
+		50 packets @ 64 bytes/packet, rtt min/avg/max/mdev = 166.825/180.286/203.004/7.920 ms
+
+		planetlab1.nakao-lab.org -> ebb.colgate.edu 
+		50 packets @ 64 bytes/packet, rtt min/avg/max/mdev = 166.987/179.173/196.331/7.107 ms
+
+
+	2)	
+		ebb.colgate.edu
+		Iperf: Average: 4.13 Mbits/sec
+		Netalyzr: Upload 5.3 Mbit/sec, Download 5.5 Mbit/sec
+	
+		planetlab1.nakao-lab.org
+		Iperf: Average: 3.68 Mbits/sec
+		Netalyzr: Upload 10 Mbit/sec, Download 11 Mbit/sec
+
+
+	3) 
+		ebb.colgate.edu(Server) -> planetlab1.nakao-lab.org
+		20 hops
+
+		planetlab1.nakao-lab.org(Server) -> ebb.colgate.edu
+		19 hops
+
+	4)
+		ebb.colgate.edu(Server) -> planetlab1.nakao-lab.org: 
+                
+                9 ASes
+
+		Colgate University, Hamilton, NY
+		01| 149.43.80.20     | COLGATE-UNIVERSITY - Colgate University
+		Unknown (Probably in NYS)
+		02| 172.16.2.10      | NA
+		Rome, NY
+		03| 72.43.89.1       | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		Clayton, NY
+		04| 24.58.149.44     | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		05| 24.58.149.4      | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		Rochester, NY
+		06| 24.58.149.252    | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		Los Angeles, CA
+		07| 107.14.19.28     | TWCABLE-BACKBONE - Road Runner HoldCo LLC
+		Las Vegas, NV
+		08| 66.109.6.189     | TWCABLE-BACKBONE - Road Runner HoldCo LLC
+		Chicago, IL
+		09| 64.86.137.13     | GLOBEINTERNET TATA Communications
+		10| 64.86.78.18      | GLOBEINTERNET TATA Communications
+		Englewood, CO
+		11| 129.250.2.24     | NTT-COMMUNICATIONS-2914 - NTT America, Inc.
+		12| 129.250.3.98     | NTT-COMMUNICATIONS-2914 - NTT America, Inc.
+		13| 129.250.3.107    | NTT-COMMUNICATIONS-2914 - NTT America, Inc.
+		14| 129.250.3.35     | NTT-COMMUNICATIONS-2914 - NTT America, Inc.
+		15| 129.250.11.114   | NTT-COMMUNICATIONS-2914 - NTT America, Inc	
+               ---Transoceanic cables here
+		16| 60.37.27.159     | OCN NTT Communications Corporation
+		17| 122.1.246.218    | OCN NTT Communications Corpor
+		18| 221.184.27.206   | OCN NTT Communications Corporation
+		Tokyo, Japan
+		19| 202.180.39.238   | JGNV6 National Institute of Information and Communications Technology
+		20| 202.237.248.221  | NICT-NANV National Institute of Information and Communications Technology
+
+
+		planetlab1.nakao-lab.org -> ebb.colgate.edu:
+                
+                9 ASes
+
+		Tokyo, Japan
+		01| 202.237.248.254  | NICT-NANV National Institute of Information and Communications Technology
+		02| 202.180.39.237   | JGNV6 National Institute of Information and Communications Technology
+		Assuming these are trans-oceanic cables
+		03| 221.184.27.205   | OCN NTT Communications Corporation
+		04| 122.1.246.213    | OCN NTT Communications Corporation
+		05| 60.37.27.88      | OCN NTT Communications Corporation
+		Englewood, CO
+		06| 129.250.11.113   | NTT-COMMUNICATIONS-2914 - NTT America, Inc.
+		San Jose, CA
+		07| 129.250.2.34     | NTT-COMMUNICATIONS-2914 - NTT America, Inc.
+		Englewood, CO (This seems roundabout)
+		08| 129.250.5.13     | NTT-COMMUNICATIONS-2914 - NTT America, Inc
+		Quebec, Canada
+		09| 209.58.116.21    | GLOBEINTERNET TATA Communications
+		10| 209.58.116.126   | GLOBEINTERNET TATA Communications
+		Las Vegas, NV (Wait... what?)
+		11| 66.109.6.136     | TWCABLE-BACKBONE - Road Runner HoldCo LLC
+		12|-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		15| 24.58.149.5      | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		16| 24.58.149.45     | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		Rome, NY
+		17| 72.43.89.2       | RR-NYSREGION-ASN-01 - Road Runner HoldCo LLC
+		Unknown (probably NYS)
+		18|  * * *
+		Colgate University, Hamilton, NY
+		19| 149.43.80.20     | COLGATE-UNIVERSITY - Colgate University
+		
+	5)
+		ebb.colgate.edu -> planetlab1.nakao-lab.org
+		@ 1/2 BNR (2.07 Mbits/sec):
+			Packets received: 19819
+			Packets (apparently) sent: 20000
+			Packets lost: 181
+			Duplicate packets: 0
+			Send rate (bits/sec): 2066995.45692
+			Receive rate (bits/sec): 2066988.21245
+			Loss Rate: 0.00905
+		@ 1/4 BNR (1.04 Mbits/sec):
+			Packets received: 19797
+			Packets (apparently) sent: 20000
+			Packets lost: 203
+			Duplicate packets: 0
+			Send rate (bits/sec): 1046003.18977
+			Receive rate (bits/sec): 1046003.97087
+			Loss Rate: 0.01015
+		Avg Loss Rate: 0.0096
+
+		planetlab1.nakao-lab.org -> ebb.colgate.edu 
+		@ 1/2 BNR (1.84 Mbits/sec):
+			Packets (apparently) sent: 20000
+			Packets lost: 8
+			Duplicate packets: 0
+			Send rate (bits/sec): 1841987.84184
+			Receive rate (bits/sec): 1841994.26476
+			Loss Rate: 0.0004
+		@ 1/4 BNR (0.92 Mbits/sec):
+			Packets received: 20000
+			Packets (apparently) sent: 20000
+			Packets lost: 0
+			Duplicate packets: 0
+			Send rate (bits/sec): 920625.626122
+			Receive rate (bits/sec): 920627.536045
+			Loss Rate: 0 (0.001)
+		Average Loss Rate: 0.0007
+
+	6)
+		ebb.colgate.edu -> planetlab1.nakao-lab.org
+		TCP Throughput:
+		Tput = (1500 bytes * 0.87)/(180.286ms * sqrt(0.0096)) = 577.168901 Kb/s
+
+		planetlab1.nakao-lab.org -> ebb.colgate.edu 
+		TCP Throughput:
+		Tput = (1500 bytes * 0.87)/(179.173ms * sqrt(0.0007)) = 2.15069565 Mb/s
+
+	7)
+		ebb.colgate.edu -> planetlab1.nakao-lab.org
+		Buffering Elasticity:
+		@ 3.0 Mbits/sec bitblast transmission:
+			61 packets transmitted, 61 received, 0% packet loss, time 60070ms
+			rtt min/avg/max/mdev = 180.321/194.344/215.570/7.421 ms
+
+		planetlab1.nakao-lab.org -> ebb.colgate.edu 
+		Buffering Elasticity:
+		@ 3 Mbits/sec bitblaster:
+			61 packets transmitted, 61 received, 0% packet loss, time 60067ms
+			rtt min/avg/max/mdev = 179.885/194.269/207.541/6.547 ms
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+DISCUSSION
+
+One of the problems we faced was the Colgate firewall, and also setting up the SSH access took some time too. Flow never really seemed to work for us for some reason, so we always used ebb instead. Some other nodes seemed to not let us through either, but we managed to get a hold of a few nodes for our purpose eventually though.
+One interesting observation was that the connection from Colgate always seemed to have the worst performance - lowest in terms of throughput, higher packet loss rate etc.
+The path from Colgate to Japan connection was of some interest too in that after the trans-oceanic jump from Japan to US, it was a bit circuitous - it went back and forth between Colorado and California, Canada and Nevada, and eventually from California to New York most probably through a specially laid network cable from Los Angeles to NYS. 
+Also interestingly there is a router adjacent to Colgate at  172.16.2.10 for which a whois lookup was completely futile and provided no information. Secretive. 

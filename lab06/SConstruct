@@ -1,0 +1,1 @@
+Program('netcat', ['netcat.cc'], CXXFLAGS='-g -Wall')

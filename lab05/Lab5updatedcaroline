@@ -1,0 +1,62 @@
+3.1)	
+	a. Colgate's AS number = 1289 (last AS# in path from some AS# to a prefix is typically the AS# that matches that prefix)
+	b. In this situation, AS path prepending is pretty much pointless. Technically, AS path prepending makes a shorter AS path look longer, and therefore less preferable to the BGP.  This is useful in certain cases where you would want another path to be used that is longer or equal to the path you are prepending.  However, Colgate doesn't carry transit traffic, so it doesn't make sense that we would want to increase our path length. One possible advantage for Colgate in doing this would be to prevent transit traffic between Colgate's two Internet links to Time Warner by making the given paths very unpreferable.  Also, maybe Time Warner required us to path prepend to decrease or chances of carrying transit traffic, since that would potentially result in more work/management overhead for them.
+	c. Time Warner's AS # should be adjacent to Colgate's in the paths looked at above, so it is 11351.  This has the prefix 149.76.0.0/16 (its at the end of any given path to this prefix) and belongs to Road Runner HoldCo LLC, a subsidiary of Time Warner (http://asn.cymru.com/cgi-bin/whois.cgi).
+
+3.2)
+	a. 0.94644307911 -- 94.6% of IP prefixes experience no update message.
+	b. 211.155.0.0/20 experiences the most updates(636), with a frequency of about 1 update per minute)
+	c. see histogram32.pdf
+
+	d. About 10^5.5 prefixes (around 400000 in the non-log graph) get 0 updates, about 100 get ~ 100 updates, 1 got 150 updates, 1 got 250 updates, around 10^1.5 got 300 updates, 10^0.7 got 350 updates, 1 got 500 updates, 10^0.3 got 550 updates, 1 got 600 updates.
+BGP is fairly stable since only a small number of prefixes get updated, and around 95% of the prefixes in our data received no updates.
+
+
+3.3)
+a. Create a program to plot the distribution of update-message inter-arrival times for a given BGP session. You can choose
+how to plot these times. You can use a simple histogram at minimum, and you can consider whether to use a log axis, or a
+cumulative distribution plot. You can experiment with the plot to highlight interesting features of the distribution.
+
+
+iterate through dictionary to get 3 prefixes with max number of updates
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+b. What is a reasonable value for the threshold T? Briefly explain.
+c. What do you think this threshold suggests about the nature of BGP events and BGP route convergence time?
+
+
+
+
+http://www.cs.princeton.edu/~jrex/papers/imw02.pdf

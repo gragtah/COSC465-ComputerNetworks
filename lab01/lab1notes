@@ -1,0 +1,62 @@
+Lab 1
+
+finish Person
+new/delete
+bool true/false
+iostreams
+STL container:vector
+
+//HEADER START
+class Person{
+  public:
+    Person();
+    Person(const std::string &, int, char *);
+    ~Person();
+    void speak(const std::string &);
+
+  private:
+    std::string name;
+    int age;
+    char * ssn;
+};
+//HEADER END
+
+
+//SOURCE FILE BEGIN
+
+Person::Person(const std::string &s, int age, char * ssn){
+  this->name= s;
+  this->age = age;
+  //now this is like java first create new then copy over, else immutable, 
+  // and points to same thing, so reference lost when out of scope.
+  this->ssn = new char [strlen(ssn) + 1];
+  strcpy(this->ssn, ssn);
+}
+
+Person::~Person(){
+  delete [] this->ssn;
+}
+
+
+/*
+Example
+int * i = new int;
+
+*i= 42;
+delete i;
+
+Person *p = new Person("Bob", 3, "----");
+
+delete p;
+*/
+
+
+
+#include <iostream>
+void Person::speak(const std:string &s){
+  std::cout<<this->name<<"said"<<s<<std:endl;
+
+}
+
+lookup(string &, ip &)
+  example "www.google.com"

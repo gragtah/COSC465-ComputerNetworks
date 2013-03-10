@@ -1,0 +1,30 @@
+           --- req --> PROXY ---request---> 
+firefox                                      Web Server
+          <--res ---- PROXY <---response---
+
+
+
+
+
+Server port should be easy (it's either 80 or a specific port present in the Host: header in the original request).
+
+For the client port, the ServerRequest object has a connection property, which further has remoteAddress and remotePort properties. So, if your ServerRequest object is named
+
+req
+
+(this will be the first parameter to the "main" callback you get when accepting a request from a browser), you can say
+
+req.connection.remoteAddress
+
+(and similar for
+
+ remotePort
+
+ ).
+
+
+
+
+Just start with the server code, everything happens within the callback function except for the logging function he provided which should be outside the callback...once you are inside callback populate the options with the stuff you can extract from res, then just add the client code with var request using this options, thats almost all that happens except for the logging, hope that helps
+
+

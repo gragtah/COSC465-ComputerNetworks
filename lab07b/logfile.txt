@@ -1,0 +1,1 @@
+127.0.0.1:36551 www.google.com:80 [Thu May 03 2012 19:27:54 GMT-0400 (EDT)] [Thu May 03 2012 19:27:54 GMT-0400 (EDT)] "GET http://www.google.com HTTP/1.1" 200 45162 0.151 2392688.74

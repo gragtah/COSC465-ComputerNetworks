@@ -1,0 +1,19 @@
+Your client program can exit in one of three ways: 
+
+(a) if the server closes the connection you should exit, 
+  
+(b) if you havent received data from the server for 10 seconds you should close the connection, or 
+
+
+(c) if you receive an EOF on stdin. For EOF, you can simulate an end of file by typing Ctrl+D on a line by itself. In the case of an EOF, the client should wait for a short period of time until it appears that the server-side has no more data to send (for example, wait for 500 milliseconds). Note that this timeout is a bit different than the 10 second idle timeout.
+
+
+
+
+FINISH TESTING WITH TEXT FILE INPUT!
+
+
+change to "idle timeout!"
+
+
+free variables?

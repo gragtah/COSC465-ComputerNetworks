@@ -1,0 +1,99 @@
+Gaurav Ragtah
+AJ Ganik
+
+For each of the following questions, write what the output would be along with a short explanation for why the code does what it does.
+
+1.
+
+Inside p with i=42 and j=13. How shocking.
+Here's i: 42
+
+node.js:201
+        throw e; // process.nextTick error, or 'error' event on first tick
+                      ^
+                      ReferenceError: j is not defined
+                          at Object.<anonymous> (/home/gragtah/cosc465/lab07/q1.js:15:32)
+      at Module._compile (module.js:441:26)
+      at Object..js (module.js:459:10)
+      at Module.load (module.js:348:31)
+      at Function._load (module.js:308:12)
+      at Array.0 (module.js:479:10)
+      at EventEmitter._tickCallback (node.js:192:40)
+
+
+Inside a function var creates a local variable, if var is not used then you look up the hierarchy until you find it or a global scope variable is created.
+
+
+2.
+
+How did I get here?
+something is: undefined
+
+node.js:201
+        throw e; // process.nextTick error, or 'error' event on first tick
+                              ^
+                                                    ReferenceError: nothing is not defined
+                                                                              at bar (/home/gragtah/cosc465/lab07/q2.js:17:34)
+        at foo (/home/gragtah/cosc465/lab07/q2.js:9:3)
+        at Object.<anonymous> (/home/gragtah/cosc465/lab07/q2.js:27:1)
+        at Module._compile (module.js:441:26)
+        at Object..js (module.js:459:10)
+        at Module.load (module.js:348:31)
+        at Function._load (module.js:308:12)
+        at Array.0 (module.js:479:10)
+        at EventEmitter._tickCallback (node.js:192:40)
+
+
+This behavior is due to something known as hoisting in javascript. The code is equivalent to the function and variable declarations being at the top in foo's declaration, followed by their initialization in the positions as given. Hence, bar() is the function declared inside foo() not the other one, and var something is only declared but not initialized to a value, hence the 'undefined'. 'nothing' is not created anywhere.
+
+
+
+
+3.
+
+true
+false
+false
+true
+55
+55
+
+
+The way === works is equality without type coersion. In other words, if using the triple equals, the values must be equal in type as well. Also, adding a string and an int is interpreted as string concatenation.
+
+
+4.
+
+6
+
+Javascript doesn't need to know how many items to size an array for. It automatically increases the size as needed, and since we inserted an element at index 5, the length of the array is now 6.
+
+
+5.
+
+undefined
+
+
+Javascript automatically inserts semicolon at end of lines that could be the end of a statement, hence we get undefined. We can fix it by moving the first bracket in the line below return to right next to it.
+
+
+
+6.
+
+1 2 10
+
+We work with the arguments array (passed arguments) and change the third one (at index 2) which is z, to 10.
+
+
+
+7.
+
+{ click: [Function], getClicks: [Function] }
+1
+6
+
+
+The first line is the output of the return object from myobj.
+Then we call click on myobj, and get the output of getClicks() as expected.
+Next, we call click with parameter 5, so count is incremented by 5, and we see 6 as output as expected.
+

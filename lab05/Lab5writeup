@@ -1,0 +1,36 @@
+Gaurav Ragtah
+AJ Ganik
+Caroline Cragin
+
+3.1)	
+a. 1289
+
+b. In this situation, AS path prepending is pretty much pointless. Technically, AS path prepending makes a shorter AS path look longer, and therefore less preferable to the BGP.  This is useful in certain cases where you would want another path to be used that is longer or equal to the path you are prepending. However, Colgate doesn't carry transit traffic, so it doesn't make sense that we would want to increase our path length. However, one possible advantage for Colgate in doing this would be to prevent transit traffic between Colgate's two Internet links to Time Warner by making the given paths very unpreferable.
+
+c. 11351
+
+3.2)
+a. 0.94644307911
+
+b. 211.155.0.0/20
+num updates:
+636
+updates/minute:
+1.0
+
+c. Create a plot of the number of updates per prefix.
+histogram1.pdf attached
+
+d. About 10^5.5 prefixes (around 400000 in the non-log graph) get 0 updates, about 100 get ~ 100 updates, 1 got 150 updates, 1 got 250 updates, around 10^1.5 got 300 updates, 10^0.7 got 350 updates, 1 got 500 updates, 10^0.3 got 550 updates, 1 got 600 updates.
+BGP is fairly stable since only a small number of prefixes get updated, and around 95% of the prefixes in our data received no updates.
+
+
+3.3)
+a. Create a program to plot the distribution of update-message inter-arrival times for a given BGP session.
+-> histogram2.pdf and histogram2log.pdf attached
+
+b. By analyzing our plot, we see that the huge majority of consecutive updates are within 178 seconds apart. And the graph declines there onwards up to 1428 seconds apart in consecutive updates (5000 * 8/28 bars) before a relative spike in the number of consecutive updates that are 1428 seconds apart. This seems, to us, to be a decent threshold since the spike probably indicates those messages that are part of different events, namely the end of one, and the start of another. Hence, 1428 seconds or about 23 minutes is a reasonable value for the threshold from this analysis.
+
+c. Most of BGP events and route convergence times are less than 1428 seconds in length  with that being a reasonable approximate upper bound for our analysis. BGP route convergence is by nature slow. Although this seems illogical, it makes sense considering the enormous size of a BGP network. If BGP propagated routes fast, a single, flapping network could cause an instant worldwide routing table recalculation. It is reasonable to assume that flapping routes exist pretty commonly on a daily basis, and hence that would be disastrous. 
+
+

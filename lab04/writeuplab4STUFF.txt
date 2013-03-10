@@ -1,0 +1,133 @@
+Lab 4
+
+1)
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+
+
+
+--------------------------
+2)
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+
+
+
+
+------------------------------
+3)
+ebb.colgate.edu <--> node2.planetlab.albany.edu
+
+1. 20 packets transmitted, 20 received , 0% packet loss, time 19020ms 
+rtt min/avg/max/mdev = 42.965/51.666/58.474/4.796 ms
+
+2. 
+The iperf average for albany to ebb : 1.645 Mbits/sec
+The iperf average for ebb to albany : 2.795 Mbits/sec
+albany: Network bandwidth: Upload 4.3 Mbit/sec, Download 6.6 Mbit/sec
+ebb: Network bandwidth (?): Upload 5.7 Mbit/sec, Download 5.6 Mbit/sec
+                                           
+3. 
+4. 
+5.
+6.
+7.
+
+
+
+-----------------------
+4)
+ebb.colgate.edu <--> planetlab1.ecs.vuw.ac.nz
+
+1. 20 packets transmitted, 20 received, 0% packet loss, time 19019 ms
+rtt min/avg/max/mdev = 226.495/226.951/227.737/0.458 ms
+
+2.
+3.
+4.
+5.
+6.
+7.
+
+
+
+
+------------------------------
+5)
+ebb.colgate.edu <--> pl1.uni-rostock.de
+
+1. 20 packets transmitted, 20 received, 0% packet loss, 19019ms
+rtt min/avg/max/mdev = 196.272/202.747/211.328/3.885 ms
+2.
+3.
+4.
+5.
+6.
+7.
+                                                                                                             
+
+
+
+-------------------------
+
+
+                                                                                                                                                                                             colgate_cosc465@ebb ~]$ iperf -s
+                                                                                                                                                                                             ------------------------------------------------------------
+                                                                                                                                                                                             Server listening on TCP port 5001
+                                                                                                                                                                                             TCP window size: 85.3 KByte (default)
+  ------------------------------------------------------------
+  [  4] local 149.43.80.20 port 5001 connected with 169.226.40.4 port 52409
+  [  4]  0.0-13.2 sec  2.38 MBytes  1.52 Mbits/sec
+  ^C[colgate_cosc465@ebb ~]$ iperf -c node2.planetlab.albany.edu
+  ------------------------------------------------------------
+  Client connecting to node2.planetlab.albany.edu, TCP port 5001
+  TCP window size: 16.0 KByte (default)
+  ------------------------------------------------------------
+  [  3] local 149.43.80.20 port 44745 connected with 169.226.40.4 port 5001
+  [  3]  0.0-10.0 sec  3.39 MBytes  2.84 Mbits/sec
+
+
+
+
+  ------------------------------------------------------------
+  Client connecting to ebb.colgate.edu, TCP port 5001
+  TCP window size: 16.0 KByte (default)
+  ------------------------------------------------------------
+  [  3] local 169.226.40.4 port 52409 connected with 149.43.80.20 port 5001
+  [  3]  0.0-11.3 sec  2.38 MBytes  1.77 Mbits/sec
+  [colgate_cosc465@node2 GangsterTeam]$ iperf -s
+  ------------------------------------------------------------
+  Server listening on TCP port 5001
+  TCP window size: 85.3 KByte (default)
+  ------------------------------------------------------------
+  [  4] local 169.226.40.4 port 5001 connected with 149.43.80.20 port 44745
+  [  4]  0.0-10.3 sec  3.39 MBytes  2.75 Mbits/sec
+
+
+
+  Albany:
+  Network Access Link Properties +   ‚Äì
+  Network latency measurements (?): Latency: 17ms Loss: 0.0% +
+  TCP connection setup latency (?): 14ms +
+  Network background health measurement (?): no transient outages +
+  Network bandwidth (?): Upload 4.3 Mbit/sec, Download 6.6 Mbit/sec +
+  Network buffer measurements (?): Uplink 220 ms, Downlink 57 ms
+
+
+  Ebb:
+  Network Access Link Properties +   ‚Äì
+  Network latency measurements (?): Latency: 120ms Loss: 0.5% +
+  TCP connection setup latency (?): 120ms +
+  Network background health measurement (?): no transient outages +
+  Network bandwidth (?): Upload 5.7 Mbit/sec, Download 5.6 Mbit/sec +
+  Network buffer measurements (?): Note

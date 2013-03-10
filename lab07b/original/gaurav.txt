@@ -1,0 +1,2 @@
+127.0.0.1:36529 cs.colgate.edu:80 [Thu May 03 2012 19:16:41 GMT-0400 (EDT)] [Thu May 03 2012 19:16:41 GMT-0400 (EDT)] "GET http://cs.colgate.edu HTTP/1.1" 200 6120 0.018 2720000.00
+127.0.0.1:36529 cs.colgate.edu:80 [Thu May 03 2012 19:16:44 GMT-0400 (EDT)] [Thu May 03 2012 19:16:44 GMT-0400 (EDT)] "GET http://cs.colgate.edu HTTP/1.1" 200 6120 0.02 2448000.00

@@ -1,0 +1,128 @@
+//source file
+
+#include <iostream>
+#include <string.h>
+#include <vector>
+#include <arpa/inet.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netdb.h> 
+#include "dnscache.hh"
+#include <map>
+using namespace std;
+
+class DnsCache{
+  private: 
+    std::map<string, struct in_addr> cache;
+    int lookuptime = 0;
+    //struct timeval t;// = (struct timeval){ 0 };
+    //memset(&t, 0, sizeof(t)); 
+
+  public:
+    //Look up the IP address corresponding to the domain name referred
+    //to by the string s. The IP address should be stored in the reference
+    //variable ip. The method should return true on success and false
+    //otherwise. Note that there may be multiple IP addresses that are
+    //mapped from the same host name. Your cache only needs to consider
+    //one of them. You should also only consider IPv4 addresses
+    bool lookup(const std::string &s, struct in_addr &ip){
+      
+      struct timeval begin, end, diff;
+      gettimeofday(&begin, 0);
+
+      //Search in cache first
+      map<string, struct in_addr>::iterator it;
+      it = cache.find(s);
+      std :: cout << " checking in cache..."  << std :: endl;
+      if (it != cache.end()){
+        
+        memcpy(&ip , &it->second, sizeof(ip));
+        std :: cout << " found in cache."  << std :: endl;
+        gettimeofday(&end,0);
+        timersub(&end, &begin, &diff)
+        //timeradd(&t, &diff, &t);
+        lookuptime += diff.tv_sec + (diff.tv_usec / 1000000.0);
+        return true;
+      }
+
+
+     //If not found in cache, query the DNS. Also add to cache. 
+
+      struct addrinfo *result = 0; // ptr to lookup results
+      struct addrinfo hints; // tell getnameinfo a bit about what we're looking for
+      memset(&hints , 0, sizeof(hints)); // zero out the hints structure
+      hints.ai_family = AF_INET; // we're only interested in IPv4 addrs
+      int error = getaddrinfo(s.c_str(), 0, &hints , &result);
+      if (error == 0) {
+      // use the first IP address obtained from the function call
+      struct sockaddr_in *sin = (struct sockaddr_in*)(result ->ai_addr);
+      // put IP address in our ipaddr struct
+      memcpy(&ip , &sin->sin_addr , sizeof(ip));
+      // free up the memory consumed by DNS results
+      freeaddrinfo(result);
+      cache[s] = ip;
+      gettimeofday(&end,0);
+      timersub(&end, &begin, &diff)
+      //timeradd(&t, &diff, &t);
+      lookuptime += diff.tv_sec + (diff.tv_usec / 1000000.0);
+      return true;
+      } else {
+      gettimeofday(&end,0);
+      timersub(&end, &begin, &diff)
+      //timeradd(&t, &diff, &t);
+      lookuptime += diff.tv_sec + (diff.tv_usec / 1000000.0);
+      return false;
+      }
+
+    }
+
+
+    //Invalidate (remove) any cached entries that are related to the IP
+    //address ip. The method shouldn’t return anything.
+    void invalidate(const struct in_addr &ip){
+
+
+
+    }
+
+
+    //Invalidate (remove) any cached entries that are related to the domain
+    //name referred to by s. The method shouldn’t return anything.
+    void invalidate (const std::string &s){
+      
+      map<string, struct in_addr>::iterator it;
+      it = cache.find(s);
+      if (it != cache.end()){
+        cache.erase(it);
+      }
+    }
+
+
+    //Return a double containing the average measured time to perform
+    //any type of DNS lookup, in seconds. The returned value should be
+    //computed over all lookup requests, and consider both entries that are
+    //found in cache, and entries that must be obtained through a lookup
+    //to the DNS. (It should also include time taken for both failed and
+    //good lookups, too.) If no lookups have been done and this method
+    //is called, it can just return 0.
+    double average_lookup(){
+
+
+    }
+
+    //Print the entire contents of your cache to standard output. You can
+    //choose any reasonable format for the output.
+    void dump_cache(){
+      map<string, struct in_addr>::iterator it;
+      for ( it=cache.begin() ; it != cache.end(); it++ ){
+        cout << &it->first<< " => " << &it->second << endl;
+      }
+
+    }
+
+
+    DnsCache(){}
+
+     ~DnsCache(){}
+};

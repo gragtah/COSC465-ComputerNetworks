@@ -1,0 +1,2 @@
+Program('bitblastsend', ['bitblastsend.cc'], CXXFLAGS='-g -Wall')
+Program('bitblastrecv', ['bitblastrecv.cc'], CXXFLAGS='-g -Wall')

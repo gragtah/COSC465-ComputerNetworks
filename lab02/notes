@@ -1,0 +1,19 @@
+1) UDP connection
+a) make a socket
+b) construct sockaddr_in
+   server IPaddress 149.43.80.25
+   UDP port 2468
+c) call sendto()
+d) call recvfrom() //blocks! so use poll first, and then this.
+
+2) Blather application protocol
+
+PUTBLAT ____(10 chars)__ ______the blat(50 chars)_____
+Response:
+either OK or NO _______(100 chars for explanation)_________
+
+GETBLAT ________________
+Response: NO ____________  or OK _(2 chars-how many blats follow)_ __(10 chars username)__ ____(50 chars blat/s)_____
+
+pass in atleast 604 bytes buffer, since only one call can be made, no partial receiving of blats
+

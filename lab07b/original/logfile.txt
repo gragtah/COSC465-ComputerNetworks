@@ -1,0 +1,7 @@
+127.0.0.1:36446 cs.colgate.edu:80 [Thu May 03 2012 18:28:32 GMT-0400 (EDT)] [Thu May 03 2012 18:28:32 GMT-0400 (EDT)] "GET http://cs.colgate.edu HTTP/1.1" 200 6120 0.019 2576842.11
+127.0.0.1:36446 cs.colgate.edu:80 [Thu May 03 2012 18:28:36 GMT-0400 (EDT)] [Thu May 03 2012 18:28:36 GMT-0400 (EDT)] "GET http://cs.colgate.edu HTTP/1.1" 200 6120 0.019 2576842.11
+127.0.0.1:36450 cs.colgate.edu:80 [Thu May 03 2012 18:30:29 GMT-0400 (EDT)] [Thu May 03 2012 18:30:29 GMT-0400 (EDT)] "GET http://cs.colgate.edu HTTP/1.1" 200 6120 0.02 2448000.00
+127.0.0.1:36450 www.bing.com:80 [Thu May 03 2012 18:31:19 GMT-0400 (EDT)] [Thu May 03 2012 18:31:20 GMT-0400 (EDT)] "GET http://www.bing.com HTTP/1.1" 404 23855 0.178 1072134.83
+127.0.0.1:36450 www.example.com:80 [Thu May 03 2012 18:31:36 GMT-0400 (EDT)] [Thu May 03 2012 18:31:36 GMT-0400 (EDT)] "GET http://www.example.com HTTP/1.1" 302 0 0.147 0.00
+127.0.0.1:36450 www.thisyathat.com:80 [Thu May 03 2012 18:32:29 GMT-0400 (EDT)] [Thu May 03 2012 18:32:29 GMT-0400 (EDT)] "GET http://www.thisyathat.com HTTP/1.1" 200 10527 0.441 190965.99
+127.0.0.1:36450 cs.colgate.edu:80 [Thu May 03 2012 18:33:11 GMT-0400 (EDT)] [Thu May 03 2012 18:33:11 GMT-0400 (EDT)] "GET http://cs.colgate.edu HTTP/1.1" 200 6120 0.019 2576842.11

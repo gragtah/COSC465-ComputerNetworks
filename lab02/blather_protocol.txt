@@ -1,0 +1,70 @@
+/**
+  BLATHER protocol messages can either be REQUESTS or RESPONSES
+
+  Requests:
+    There are two valid requests: PUTBLAT and GETBLAT.
+
+    PUTBLAT is used for posting a BLAT to the blatserver.
+    The format of a PUTBLAT message is as follows:
+        char request[7];  // contents: PUTBLAT
+        char blatter[10]; // contents: name of the blatter (e.g., @itsme!)
+        char blat[50];    // contents: the blat text.
+
+        NB: no fields should be NULL-terminated.  The blat text should be
+        filled with spaces for "unused" characters.  E.g., if you send a
+        blat with the text "Mmmmmm.... #mehungry", which consists of exactly
+        20 characters, the remaining 30 characters in the blat text should be
+        spaces.
+        
+        As shown above, the PUTBLAT message should be exactly 67 characters/bytes.
+
+    GETBLAT is the other valid request.   This request is used to retrieve
+        the most recent blats (up to the most recent 10).
+     
+    The format of a GETBLAT message is as follows:
+        char request[7];   // contents: GETBLAT
+
+        As shown above, the GETBLAT message should be exactly 7 characters.
+        
+  Responses:
+    There are two valid responses to each of the two possible requests (making
+    a total of 4 possible response messages).
+
+    Responses for PUTBLAT:
+        Success: if the PUTBLAT request is successful, 2 characters with the
+                 text OK will be returned.
+        Failure: if the PUTBLAT request was not successful for any reason, 2
+                 characters with the text NO will be returned, followed by
+                 up to 100 characters of explanation text.
+
+    Responses for GETBLAT:
+        Success: if the GETBLAT request was successful, a message with the following
+                 format is returned:
+            char response[2];   // contents: OK
+            char numblats[2];   // contents: an ASCII number indicating the number of
+                                // BLATs to follow ('00' through '10')
+            char blatcontents[10*60]; 
+                                // each blat is 60 bytes long: the first 10 bytes
+                                // consist of the blatter name, and the remaining
+                                // 50 bytes are the blat text.  If the numblats field
+                                // contains " 5" (or "05"), there will be 5 blats, each of
+                                // 60 bytes, in the blatcontents portion of the message.
+                                // The maximum message length for a successful response
+                                // to GETBLAT can be up to 2+2+10*60 bytes.
+                                // However, the message may be shorter, depending on
+                                // the number of actual blats in the response.
+                                // For example, if only 3 blats are returned, the response
+                                // length will be 2+2+3*60.
+
+        Failure: if the GETBLAT request is not success for any reason, a message 
+                 with the text NO will be returned, followed by up to 100 characters
+                 with explanation text for why the request was unsuccessful.
+
+  If an unknown request message is received by the server, the server will response
+  with the characters (2 bytes) 'NO', followed by up to 100 characters of explanation
+  text.
+
+  The BLAT server is always located at 149.43.80.25, on UDP port 2468.
+
+**/
+

@@ -1,0 +1,3 @@
+env = Environment(CXX='g++')
+env.Append(CXXFLAGS=' -g -Wall')
+env.Program('lab01', ['lab01.cc', 'dnscache.cc'])
